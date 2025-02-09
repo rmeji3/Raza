@@ -1,0 +1,221 @@
+
+/* Store Carousel Wrapper */
+.store-carousel-wrapper {
+  margin-top: 40px;
+}
+
+/* Carousel Container */
+.store-carousel-container {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+/* Hide Scrollbar */
+.store-carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Store Item (Default State) */
+.store-carousel-item {
+  width: 350px;
+  height: 660px;
+  background-color: #fef9e1;
+  border-radius: 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  gap: 10px;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+
+/* Expanded Store Item: Fullscreen with Scrolling */
+.store-carousel-item.expanded {
+  width: 100vw;
+  height: 2000px;
+  border-radius: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll; /* Allows vertical scrolling */
+  scroll-behavior: smooth;
+  padding-bottom: 50px; /* Prevents content from cutting off */
+}
+
+/* Ensure the image stays at the top and does not scroll */
+.image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+}
+
+/* Store Image */
+.food-img {
+  width: 100%;
+  height: 50vh; /* Half screen height */
+  object-fit: cover;
+  border-radius: 11px 11px 0 0;
+}
+
+/* Text Wrapper */
+.store-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  width: 85%;
+  padding-top: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Store Title */
+.store-carousel-text {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-weight: bold;
+  color: #a31d1d;
+  font-family: Arial;
+  text-align: left;
+  font-size: 30px;
+}
+
+/* Store Title wrapper */
+.store-text-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+/* Rating Icon */
+.rating-icon {
+  height: 20px;
+  width: 20px;
+}
+.rating-icon-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.rating-wrapper {
+  display: flex;
+}
+.store-rating {
+  color: rgb(64, 64, 64);
+  font-size: 20px;
+  font-family: Arial;
+}
+
+/* Store Description */
+.store-description {
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: normal;
+  color: rgb(64, 64, 64);
+  text-wrap: wrap;
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+
+/* Expand Button */
+.expand-store-carousel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 310px;
+  height: 70px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #fef9e1;
+  background-color: #a31d1d;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-top: auto;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.expand-store-carousel-button:hover {
+  background-color: #8e1818;
+  transform: scale(1.05);
+}
+
+.expand-store-carousel-button:active {
+  transform: scale(0.95);
+}
+
+.expand-store-carousel-button:hover {
+  background-color: #a31d1d;
+}
+
+/* Close Button */
+.close-store-carousel-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.close-store-carousel-button:hover {
+  background-color: #ccc;
+}
+.store-extended-item {
+  width: 350px;
+  height: 660px;
+}
+/* Fullscreen Transition Box */
+.transition-box {
+  position: fixed;
+  top: -100vh; /* Start off-screen */
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #a31d1d; /* Background color for transition */
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Slide Down Animation */
+@keyframes slideDown {
+  from {
+    top: -100vh;
+  }
+  to {
+    top: 0;
+  }
+}
+
+/* Apply Animation When Active */
+.transition-box.active {
+  animation: slideDown 0.8s ease-in-out forwards;
+}
