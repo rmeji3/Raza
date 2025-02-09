@@ -1,0 +1,8 @@
+this program was made for mobile platform.
+to run the program you need node js.
+
+run the following:
+
+cd raza
+npm install
+npm run dev
